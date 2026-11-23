@@ -1,0 +1,35 @@
+# Bài 3: Build và Push Image lên GHCR
+
+## 1. Đăng nhập GHCR
+
+```bash
+echo "YOUR_GITHUB_PAT" | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
+```
+
+## 2. Build image
+
+```bash
+docker build -t payment-service:1.0.0 .
+```
+
+## 3. Tag image
+
+```bash
+docker tag payment-service:1.0.0 ghcr.io/YOUR_GITHUB_USERNAME/payment-service:1.0.0
+```
+
+## 4. Push image
+
+```bash
+docker push ghcr.io/YOUR_GITHUB_USERNAME/payment-service:1.0.0
+```
+
+## 5. Kiểm tra image
+
+```bash
+docker images
+```
+
+## 6. GitHub Package URL
+
+https://github.com/users/ngotruong24122006-arch/packages/container/package/payment-service
